@@ -1,5 +1,5 @@
 From mafreitas/singularity-openms:contrib
-BootStrap: shub
+RUN BootStrap: shub
 
 %environment
 LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
