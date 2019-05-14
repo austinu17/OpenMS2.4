@@ -1,5 +1,4 @@
-From mafreitas/singularity-openms:contrib
-RUN BootStrap: shub
+FROM ubuntu:18.04
 
 %environment
 LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
