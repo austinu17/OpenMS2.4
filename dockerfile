@@ -1,4 +1,4 @@
-FROM 
+From ubuntu:18.04
 
 
 LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
