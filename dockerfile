@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM 
 
-%environment
+
 LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
 export PATH=/usr/local/openms_thirdparty/All/:$PATH
 export PATH=/usr/local/openms_thirdparty/All/LuciPHOr2:$PATH
