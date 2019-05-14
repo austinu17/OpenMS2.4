@@ -1,5 +1,6 @@
-RUN BootStrap: shub
 From: mafreitas/singularity-openms:contrib
+BootStrap: shub
+
 %environment
 LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
 export PATH=/usr/local/openms_thirdparty/All/:$PATH
