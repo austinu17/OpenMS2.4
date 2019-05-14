@@ -1,4 +1,4 @@
-From: mafreitas/singularity-openms:contrib
+From mafreitas/singularity-openms:contrib
 BootStrap: shub
 
 %environment
