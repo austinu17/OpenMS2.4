@@ -1,7 +1,7 @@
 From ubuntu:18.04
 
 
-RUN apt-get update && install -y \
+RUN apt-get -y update && install \
     build-essential cmake autoconf \
     patch libtool git automake -y 
 RUN apt-get install qtbase5-dev libqt5svg5-dev -y 
