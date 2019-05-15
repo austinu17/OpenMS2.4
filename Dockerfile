@@ -1,7 +1,7 @@
-From ubuntu:18.04
+From ubuntu:14.04
 
 
-RUN apt-get -y update
+RUN sudo apt-get -y update
 RUN apt-get install -y build-essential cmake autoconf \
 Run apt-get install -y patch libtool git automake
 RUN apt-get install -y qtbase5-dev libqt5svg5-dev
