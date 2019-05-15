@@ -21,12 +21,11 @@ RUN git clone https://github.com/OpenMS/OpenMS.git && cd OpenMS && git checkout 
 WORKDIR /usr/local/
 
 RUN git clone https://github.com/OpenMS/THIRDPARTY.git openms_thirdparty
-cd openms_thirdparty
-rm -rf .git Windows MacOS Linux/32bit
+WORKDIR /openms_thirdparty && rm -rf .git Windows MacOS Linux/32bit
 
 WORKDIR /
 RUN mkdir openms-build
-cd openms-build
+WORKDIR /openms-build
 
 RUN cmake -DCMAKE_PREFIX_PATH="$HOME/contrib-build/;/usr/;/usr/local" \
         -DCMAKE_INSTALL_PREFIX=/usr/local/ \
@@ -37,8 +36,6 @@ RUN make TOPP -j 4
 RUN make UTILS -j 4
 RUN make install -j 4 && rm -rf src doc CMakeFiles
 
-cd $HOME
+WORKDIR /
 
-RUN pip3 install snakemake matplotlib pandas numpy psutil
-
-rm -rf contrib contrib-build openms-build
+RUN pip3 install snakemake matplotlib pandas numpy psutil && rm -rf contrib contrib-build openms-build
