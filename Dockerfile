@@ -2,7 +2,7 @@ From ubuntu:18.04
 
 
 RUN apt-get -y update
-RUN install -y  build-essential cmake autoconf \
+RUN install build-essential cmake autoconf -y \
 Run install -y patch libtool git automake
 RUN apt-get install -y qtbase5-dev libqt5svg5-dev
 RUN apt-get install libeigen3-dev libsqlite3-dev \
