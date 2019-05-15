@@ -1,9 +1,9 @@
-From ubuntu:14.04
+From ubuntu:18.04
 
 
 RUN sudo apt-get -y update
 RUN apt-get install -y build-essential cmake autoconf \
-Run apt-get install -y patch libtool git automake
+RUN apt-get install -y patch libtool git automake
 RUN apt-get install -y qtbase5-dev libqt5svg5-dev
 RUN apt-get install libeigen3-dev libsqlite3-dev \
     libwildmagic-dev libboost-random1.62-dev \
@@ -32,8 +32,7 @@ RUN cmake -DCMAKE_PREFIX_PATH="$HOME/contrib-build/;/usr/;/usr/local" \
         -DBOOST_USE_STATIC=OFF \
         -DHAS_XSERVER=Off ../OpenMS
 
-RUN make TOPP -j 4
-RUN make UTILS -j 4
+RUN make TOPP -j 4 && make UTILS -j 4
 RUN make install -j 4 && rm -rf src doc CMakeFiles
 
 WORKDIR /
