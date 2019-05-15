@@ -3,7 +3,7 @@ From ubuntu:18.04
 
 RUN apt-get -y update
 RUN apt-get install -y build-essential cmake autoconf \
-RUN apt-get install -y patch libtool git automake
+    patch libtool git automake
 RUN apt-get install -y qtbase5-dev libqt5svg5-dev
 RUN apt-get install libeigen3-dev libsqlite3-dev \
     libwildmagic-dev libboost-random1.62-dev \
