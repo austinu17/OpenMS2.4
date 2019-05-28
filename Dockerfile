@@ -21,7 +21,8 @@ RUN git clone https://github.com/OpenMS/OpenMS.git && cd OpenMS && git checkout 
 WORKDIR /usr/local/
 
 RUN git clone https://github.com/OpenMS/THIRDPARTY.git openms_thirdparty
-WORKDIR /openms_thirdparty && rm -rf .git Windows MacOS Linux/32bit
+WORKDIR /openms_thirdparty
+RUN rm -rf .git Windows MacOS Linux/32bit
 
 WORKDIR /
 RUN mkdir openms-build
@@ -33,7 +34,8 @@ RUN cmake -DCMAKE_PREFIX_PATH="$HOME/contrib-build/;/usr/;/usr/local" \
         -DHAS_XSERVER=Off ../OpenMS
 
 RUN make TOPP -j 4 && make UTILS -j 4
-RUN make install -j 4 && rm -rf src doc CMakeFiles
+RUN make install -j 4
+RUN rm -rf src doc CMakeFiles
 
 WORKDIR /
 
