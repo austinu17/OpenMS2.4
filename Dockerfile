@@ -33,7 +33,8 @@ RUN cmake -DCMAKE_PREFIX_PATH="$HOME/contrib-build/;/usr/;/usr/local" \
         -DHAS_XSERVER=Off ../OpenMS
 
 RUN make TOPP -j 4 && make UTILS -j 4
-RUN make install -j 4 && rm -rf src doc CMakeFiles
+RUN make install -j 4
+RUN rm -rf src doc CMakeFiles
 
 WORKDIR /
 
